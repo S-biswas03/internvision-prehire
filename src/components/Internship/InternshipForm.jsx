@@ -72,6 +72,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Full Name</label>
 
             <input
+              required
               type="text"
               name="fullName"
               value={formData.fullName}
@@ -85,6 +86,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Email</label>
 
             <input
+              required
               type="email"
               name="email"
               value={formData.email}
@@ -98,6 +100,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Phone Number</label>
 
             <input
+              required
               type="tel"
               name="phone"
               value={formData.phone}
@@ -118,6 +121,7 @@ function InternshipForm() {
             </label>
 
             <input
+              required
               type="text"
               name="college"
               value={formData.college}
@@ -131,6 +135,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Degree</label>
 
             <input
+              required
               type="text"
               name="degree"
               value={formData.degree}
@@ -144,6 +149,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Branch</label>
 
             <input
+              required
               type="text"
               name="branch"
               value={formData.branch}
@@ -157,6 +163,7 @@ function InternshipForm() {
             <label className="block font-medium mb-2">Current Year</label>
 
             <select
+              required
               name="currentYear"
               value={formData.currentYear}
               onChange={handleChange}

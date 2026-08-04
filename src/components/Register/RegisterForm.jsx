@@ -1,4 +1,4 @@
-import { useParams , Link} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import courses from "../../data/courses";
 import { useState } from "react";
 import { submitRegistration } from "../../services/registrationService";
@@ -11,56 +11,56 @@ function RegisterForm() {
   const course = courses.find((c) => c.id === Number(id));
 
   const [formData, setFormData] = useState({
-  fullName: "",
-  email: "",
-  phone: "",
-  reason: "",
-});
-
-const [loading, setLoading] = useState(false);
-
-const handleChange = (e) => {
-  setFormData({
-    ...formData,
-    [e.target.name]: e.target.value,
+    fullName: "",
+    email: "",
+    phone: "",
+    reason: "",
   });
-};
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
+  const [loading, setLoading] = useState(false);
 
-  try {
-    setLoading(true);
-
-    const result = await submitRegistration({
-      ...formData,
-      courseId: course.id,
-      courseName: course.title,
-      amount: course.price,
-    });
-
-    console.log(result);
-
-    alert("Registration Successful!");
-
+  const handleChange = (e) => {
     setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      reason: "",
+      ...formData,
+      [e.target.name]: e.target.value,
     });
-    navigate("/payment", {
-  state: {
-    registration: result.data,
-  },
-});
-  } catch (error) {
-    console.log(error);
-    console.log(error.response);
+  };
 
-    alert(error.response?.data?.message || error.message);
-  }
-};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      setLoading(true);
+
+      const result = await submitRegistration({
+        ...formData,
+        courseId: course.id,
+        courseName: course.title,
+        amount: course.price,
+      });
+
+      console.log(result);
+
+      alert("Registration Successful!");
+
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        reason: "",
+      });
+      navigate("/payment", {
+        state: {
+          registration: result.data,
+        },
+      });
+    } catch (error) {
+      console.log(error);
+      console.log(error.response);
+
+      alert(error.response?.data?.message || error.message);
+    }
+  };
 
   return (
     <div>
@@ -82,6 +82,7 @@ const handleSubmit = async (e) => {
                   <label className="block font-medium mb-2">Full Name</label>
 
                   <input
+                    required
                     type="text"
                     name="fullName"
                     value={formData.fullName}
@@ -95,6 +96,7 @@ const handleSubmit = async (e) => {
                   <label className="block font-medium mb-2">Email</label>
 
                   <input
+                    required
                     type="email"
                     name="email"
                     value={formData.email}
@@ -108,6 +110,7 @@ const handleSubmit = async (e) => {
                   <label className="block font-medium mb-2">Phone Number</label>
 
                   <input
+                    required
                     type="tel"
                     name="phone"
                     value={formData.phone}
@@ -140,12 +143,12 @@ const handleSubmit = async (e) => {
                   </p>
                 </div>
 
-                  <button
-                    type="submit"
-                    className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition"
-                  >
-                    {loading ? "Registering..." : "Continue to Payment"}
-                  </button>
+                <button
+                  type="submit"
+                  className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-3 rounded-lg font-semibold transition"
+                >
+                  {loading ? "Registering..." : "Continue to Payment"}
+                </button>
               </div>
             </form>
           </div>
