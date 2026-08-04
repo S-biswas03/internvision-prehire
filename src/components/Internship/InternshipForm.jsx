@@ -162,11 +162,11 @@ function InternshipForm() {
               onChange={handleChange}
               className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
             >
-              <option>1st Year</option>
-              <option>2nd Year</option>
-              <option>3rd Year</option>
-              <option>4th Year</option>
-              <option>Graduate</option>
+              <option value="1st Year">1st Year</option>
+              <option value="2nd Year">2nd Year</option>
+              <option value="3rd Year">3rd Year</option>
+              <option value="4th Year">4th Year</option>
+              <option value="Graduate">Graduate</option>
             </select>
           </div>
         </div>
@@ -189,8 +189,6 @@ function InternshipForm() {
             <input
               type="radio"
               name="duration"
-              type="radio"
-              name="duration"
               value="1 Month"
               checked={formData.duration === "1 Month"}
               onChange={handleChange}
@@ -204,6 +202,7 @@ function InternshipForm() {
               name="duration"
               value="3 Months"
               checked={formData.duration === "3 Months"}
+              onChange={handleChange}
             />
             3 Months
           </label>
@@ -214,6 +213,7 @@ function InternshipForm() {
               name="duration"
               value="6 Months"
               checked={formData.duration === "6 Months"}
+              onChange={handleChange}
             />
             6 Months
           </label>
@@ -230,9 +230,6 @@ function InternshipForm() {
           placeholder="Tell us why you want to join..."
           className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-600"
         />
-        <h2 className="text-2xl font-semibold mt-10 mb-6">Resume</h2>
-
-        <input type="file" className="block w-full border rounded-lg p-3" />
         <div className="text-center mt-12">
           <button
             type="submit"
