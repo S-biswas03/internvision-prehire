@@ -1,3 +1,82 @@
+# InternVision - Internship & Course Management Platform
+
+## Live Demo
+
+Frontend:
+https://internvision-prehire.vercel.app
+
+Backend:
+https://internvision-prehire.onrender.com
+
+## Features
+
+### Student
+- Browse Courses
+- Register for Courses
+- Internship Application
+- Payment Workflow
+- Success Page
+
+### Admin
+- JWT Authentication
+- Dashboard
+- Internship Management
+- Registration Management
+- Revenue Statistics
+- Excel Export
+
+## Tech Stack
+
+Frontend
+- React
+- Vite
+- Tailwind CSS
+- Axios
+
+Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT
+- ExcelJS
+
+Deployment
+- Vercel
+- Render
+- MongoDB Atlas
+
+## Installation
+
+### Frontend
+
+npm install
+npm run dev
+
+### Backend
+
+cd server
+npm install
+npm start
+
+## Environment Variables
+
+PORT=
+MONGO_URI=
+JWT_SECRET=
+
+## Folder Structure
+
+src/
+server/
+...
+
+## Future Improvements
+
+- Razorpay Integration
+- Resume Upload
+- Email Notifications
+- Admin Status Update
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -16,3 +95,7 @@ Note: This will impact Vite dev & build performances.
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Author
+
+Supritam Biswas
