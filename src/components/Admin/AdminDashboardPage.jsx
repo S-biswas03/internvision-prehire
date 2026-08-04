@@ -99,7 +99,11 @@ const handleExport = async () => {
                   <td className="py-4">{application.fullName}</td>
                   <td>{application.email}</td>
                   <td>{application.duration}</td>
-                  <td>{application.status}</td>
+                  <td>
+                    <span className="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-sm">
+                      {application.status}
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>
@@ -131,12 +135,16 @@ const handleExport = async () => {
             </thead>
 
             <tbody>
-              {dashboard.registrations.map((registration) => (
-                <tr key={registration._id} className="border-b">
-                  <td className="py-4">{registration.fullName}</td>
-                  <td>{registration.courseName}</td>
-                  <td>₹{registration.amount}</td>
-                  <td>{registration.paymentStatus}</td>
+              {dashboard.payments.map((payment) => (
+                <tr key={payment._id} className="border-b">
+                  <td className="py-4">{payment.fullName}</td>
+                  <td>{payment.courseName}</td>
+                  <td>₹{payment.amount}</td>
+                  <td>
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm">
+                      {payment.status}
+                    </span>
+                  </td>
                 </tr>
               ))}
             </tbody>
