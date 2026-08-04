@@ -8,6 +8,57 @@ https://internvision-prehire.vercel.app
 Backend:
 https://internvision-prehire.onrender.com
 
+## 📸 Application Screenshots
+
+### 🏠 Home Page
+
+![Home Page](./screenshots/home.png)
+
+---
+
+### 📚 Courses Page
+
+![Courses Page](./screenshots/courses.png)
+
+---
+
+### 📝 Course Registration
+
+![Course Registration](./screenshots/registrationForm.png)
+
+---
+
+### 💼 Internship Application
+
+![Internship Application](./screenshots/internshipApplication.png)
+
+---
+
+### 💳 Payment Page
+
+![Payment Page](./screenshots/paymentSummary.png)
+
+---
+
+### ✅ Payment Success
+
+![Payment Success](./screenshots/paymentSuccess.png)
+
+---
+
+### 🔐 Admin Login
+
+![Admin Login](./screenshots/adminLogin.png)
+
+---
+
+### 📊 Admin Dashboard
+
+![Admin Dashboard](./screenshots/adminDashboard.png)
+
+---
+
+
 ## Features
 
 ### Student
