@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getDashboardData } from "../../services/dashboardService";
+import { exportExcel } from "../../services/exportService";
 
 function AdminDashboardPage() {
   const [dashboard, setDashboard] = useState(null);
@@ -19,6 +20,31 @@ function AdminDashboardPage() {
   if (!dashboard) {
     return <h2 className="text-center mt-10">Loading...</h2>;
   }
+
+const handleExport = async () => {
+  try {
+    const blob = await exportExcel();
+
+    const url = window.URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "InternVision_Report.xlsx";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    link.remove();
+
+    window.URL.revokeObjectURL(url);
+  } catch (error) {
+    console.log(error);
+    alert("Failed to export Excel");
+  }
+};
+
   return (
     <section className="bg-gray-100 min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-6">
@@ -83,7 +109,10 @@ function AdminDashboardPage() {
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-2xl font-bold">Payments</h2>
 
-            <button className="bg-green-600 text-white px-5 py-2 rounded-lg">
+            <button
+              onClick={handleExport}
+              className="bg-green-600 text-white px-5 py-2 rounded-lg"
+            >
               Export Excel
             </button>
           </div>
